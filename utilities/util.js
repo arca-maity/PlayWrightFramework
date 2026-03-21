@@ -40,4 +40,30 @@ export class util
         }
     }
 
+    async fillText(locator,testData)
+    {
+        try
+        {
+            await locator.fill(testData);
+            console.log(`INFO --> Entered text ${testData}.`);
+        }
+        catch
+        {
+            console.log("Exception Logged --> ",error);
+        }
+    }
+
+    async click(locator)
+    {
+        try
+        {
+            await locator.click();
+            console.log(`INFO --> Clicked Button.`);
+        }
+        catch
+        {
+            console.log("Exception Logged --> ",error);
+        }
+    }
+
 }

@@ -9,8 +9,8 @@ test("Checking Browser Launch", async({page})=>{
 
     await utils.loadPage("https://thetokitokistore.myinstamojo.com/");
     const searchBox = await utils.findElement("placeholder","Search");
-    await searchBox.fill("Bottle");
-    await (await utils.findElement("button","Search")).click();
+    await utils.fillText(searchBox,"Bottle");
+    await utils.click(await utils.findElement("button","Search"));
 
     await page.locator(".w-full .mb-30").first().waitFor();
     console.log("Products" ,await productCardLocator.count());
