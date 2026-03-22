@@ -1,4 +1,4 @@
-const {test, expect, request} = require('@playwright/test');
+const {test} = require('@playwright/test');
 import {util} from "../utilities/util.js";
 
 test("Checking Browser Launch", async({page})=>{
