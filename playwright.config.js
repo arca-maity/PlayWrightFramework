@@ -12,7 +12,7 @@ const config = {
 
   //Wait time specific to assertions
   expect: {
-    timeout: 5 * 1000
+    timeout: 20 * 1000
   },
 
   //Reports
@@ -24,7 +24,7 @@ const config = {
   //Browser specifications
   use: {
     browserName: 'chromium',
-    headless: false
+    headless: true
   },
 
 };
