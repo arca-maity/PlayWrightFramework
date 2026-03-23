@@ -36,11 +36,19 @@ export class util
 
                 case "link":
                     console.log(`INFO --> Looking for ${searchType} with label ${elementName}`);
-                    return this.page.locator("//*[text()='"+elementName+"']//parent::a");
+                    return this.page.locator("//*[text()='"+elementName+"']/parent::a");
 
                 case "text":
                     console.log(`INFO --> Looking for ${searchType} with label ${elementName}`);
                     return this.page.locator("//*[text()='"+elementName+"']");
+
+                 case "dropdown":
+                    console.log(`INFO --> Looking for ${searchType} with label ${elementName}`);
+                    return this.page.locator(`//select[@name='${elementName}']`);
+
+                 case "textbox":
+                    console.log(`INFO --> Looking for ${searchType} with label ${elementName}`);
+                    return this.page.locator(`//*[text()='${elementName}']/preceding-sibling::input`);
             }
         }
         catch(error)
@@ -64,11 +72,19 @@ export class util
 
                 case "link":
                     console.log(`INFO --> Looking for ${searchType} with label ${elementName} at position ${instance}`);
-                    return this.page.locator("//*[text()='"+elementName+"']//parent::a").nth(instance);
+                    return this.page.locator("//*[text()='"+elementName+"']/parent::a").nth(instance);
 
                 case "text":
                     console.log(`INFO --> Looking for ${searchType} with label ${elementName} at position ${instance}`);
                     return this.page.locator("//*[text()='"+elementName+"']").nth(instance);
+
+                case "dropdown":
+                    console.log(`INFO --> Looking for ${searchType} with label ${elementName}`);
+                    return this.page.locator(`//select[@name='${elementName}']`).nth(instance);
+
+                 case "textbox":
+                    console.log(`INFO --> Looking for ${searchType} with label ${elementName}`);
+                    return this.page.locator(`//*[text()='${elementName}']/preceding-sibling::input`).nth(instance);
             }
         }
         catch(error)
@@ -81,8 +97,9 @@ export class util
     {
         try
         {
+            const fieldName = await locator.textContent();
             await locator.fill(testData);
-            console.log(`INFO --> Entered text ${testData} on field ${await locator.textContent()}.`);
+            console.log(`INFO --> Entered text ${testData} on field ${fieldName}.`);
         }
         catch(error)
         {
@@ -94,8 +111,9 @@ export class util
     {
         try
         {
+            const buttonName = await locator.textContent();
             await locator.click();
-            console.log(`INFO --> Clicked Button with lable ${await locator.textContent()}.`);
+            console.log(`INFO --> Clicked Button with label ${buttonName}.`);
         }
         catch(error)
         {
@@ -123,6 +141,19 @@ export class util
         {
             console.log(`INFO --> Waiting for element - ${await locator.textContent()} to Disappear from UI.`);
             await expect(locator).toBeHidden();
+        }
+        catch(error)
+        {
+            console.log("Exception Logged --> ",error);
+        }
+    }
+
+     async selectDropdownValue(locator, testData)
+    {
+        try
+        {
+            await locator.selectOption({label:testData});
+            console.log(`INFO --> Selected dropdown value - ${testData} on field - ${await locator.textContent()}.`);
         }
         catch(error)
         {
