@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-export class util
+export class Util
 {
 
     constructor(page)
