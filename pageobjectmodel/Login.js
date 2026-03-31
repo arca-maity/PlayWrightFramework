@@ -8,8 +8,8 @@ export class Login extends Util
         this.page=page;
     }
 
-    async navigateToURL(pageURL)
+    async navigateToURL()
     {
-        await this.loadPage(pageURL);
+        await this.loadPage();
     }
 }

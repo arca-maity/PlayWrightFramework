@@ -9,13 +9,13 @@ export class Util
         this.fieldName = "";
     }
 
-    async loadPage(pageURL)
+    async loadPage()
     {
         try{
-            await test.step(`INFO --> Loading webpage with url ${pageURL}`, async ()=>
+            await test.step(`INFO --> Loading webpage with url ${process.env.BASE_URL}`, async ()=>
             {
-                console.log("INFO --> Loading webpage with url", pageURL);
-                await this.page.goto(pageURL);
+                console.log("INFO --> Loading webpage with url", process.env.BASE_URL);
+                await this.page.goto(process.env.BASE_URL);
             });
           }
         catch(error)

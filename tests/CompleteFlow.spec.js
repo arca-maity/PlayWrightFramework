@@ -11,7 +11,7 @@ test("Complete Order Flow", async({page})=>{
     const payment = poManager.getPayment();
 
     //Navigate to Website
-    await login.navigateToURL("https://thetokitokistore.myinstamojo.com/");
+    await login.navigateToURL();
 
     //Select Product and add to Cart
     await productSelection.selectCategory("Below 100");
