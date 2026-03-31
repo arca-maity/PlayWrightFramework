@@ -30,7 +30,8 @@ const config = {
   use: {
     baseURL: process.env.BASE_URL,
     browserName: 'chromium',
-    headless: true
+    headless: true,
+    screenshot: 'only-on-failure',
   },
 
 };

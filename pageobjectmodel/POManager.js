@@ -1,16 +1,16 @@
-import { Checkout } from "../pageobjectmodel/CheckOut.js";
+import { CheckOut } from "../pageobjectmodel/CheckOut.js";
 import { Login } from "../pageobjectmodel/login.js";
 import { Payment } from "../pageobjectmodel/Payment.js";
 import { ProductSelection } from "../pageobjectmodel/ProductSelection.js";
 
 export class POManager
 {
-    constructor(page)
+    constructor(page, testData)
     {
         this.login = new Login(page);
-        this.productSelection = new ProductSelection(page);
-        this.checkout = new Checkout(page);
-        this.payment = new Payment(page);
+        this.productSelection = new ProductSelection(page, testData.ProductSelection);
+        this.checkout = new CheckOut(page, testData.CheckOut);
+        this.payment = new Payment(page, testData.Payment);
     }
 
     getLogin()
