@@ -1,0 +1,39 @@
+[{
+    "ProductSelection" : {
+        "category" : "Below 100",
+        "productname" : "Scissor"
+    },
+    "CheckOut" : {
+        "firstname" : "James",
+        "lastname" : "Bob",
+        "email" : "james.bob@mail.com",
+        "mobile" : "919988776655",
+        "house" : "New Appartment",
+        "district" : "Kolkata",
+        "pincode" : "998877",
+        "state" : "West Bengal"
+    },
+    "Payment" : {
+        "productname" : "Scissor"
+    }
+},
+{
+    "ProductSelection" : {
+        "category" : "Bag",
+        "productname" : "Sling Backpack"
+    },
+    "CheckOut" : {
+        "firstname" : "Mike",
+        "lastname" : "Hill",
+        "email" : "mike.hills@mail.com",
+        "mobile" : "919988776655",
+        "house" : "New Appartment",
+        "district" : "Kolkata",
+        "pincode" : "998877",
+        "state" : "West Bengal"
+    },
+    "Payment" : {
+        "productname" : "Sling Backpack"
+    }
+}
+]
