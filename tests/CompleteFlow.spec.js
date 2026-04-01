@@ -2,6 +2,7 @@ const {test} = require('@playwright/test');
 const { POManager } = require('../pageobjectmodel/POManager');
 const testData = JSON.parse(JSON.stringify(require('../testdata/CompleteFlowTD.json')));
 
+test.describe.configure({mode: 'parallel'});
 for(const data of testData){
 test(`Complete Order Flow for product - ${data.ProductSelection.productname}`, async({page})=>{
 

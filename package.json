@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:headed_chrome" : "npx playwright test CompleteFlow.spec.js --headed --project=chrome",
+    "test:headless_chrome" : "npx playwright test CompleteFlow.spec.js --project=chrome",
+    "test:headed_webkit" : "npx playwright test CompleteFlow.spec.js --headed --project=webkit",
+    "test:headless_webkit" : "npx playwright test CompleteFlow.spec.js --project=webkit"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
