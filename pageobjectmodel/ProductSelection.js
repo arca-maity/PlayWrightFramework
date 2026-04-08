@@ -1,4 +1,4 @@
-import {Util} from "../utilities/Util.js";
+import {Util} from "../utilities/util.js";
 
 export class ProductSelection extends Util
 {
