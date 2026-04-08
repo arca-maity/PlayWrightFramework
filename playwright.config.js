@@ -12,6 +12,12 @@ const config = {
 
   testDir: './tests',
 
+  //Failed test retry
+  retries: 1,
+
+  //Workers defined for parallel execution
+  workers: 3,
+
   //Universal script wait time.
   timeout: 30 * 1000,
 
@@ -33,6 +39,27 @@ const config = {
     headless: true,
     screenshot: 'only-on-failure',
   },
+
+  projects : [
+    {
+      name : 'chrome',
+      use: {
+        baseURL: process.env.BASE_URL,
+        browserName: 'chromium',
+        headless: true,
+        screenshot: 'only-on-failure',
+      }
+    },
+    {
+      name : 'webkit',
+      use: {
+        baseURL: process.env.BASE_URL,
+        browserName: 'webkit',
+        headless: true,
+        screenshot: 'only-on-failure',
+      }
+    }
+  ]
 
 };
 
